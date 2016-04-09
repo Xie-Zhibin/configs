@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/chrison/android/chs/td732_doov/packages/apps/Camera/src/com/android/camera'
+let g:netrw_dirhist_2='/home/chrison/android/chs/1108/TD550_MP/packages/apps/Camera/src/com/android/camera'
+let g:netrw_dirhist_3='/home/chrison/android/chs/1108/TD550_MP'
+let g:netrw_dirhist_4='/home/chrison/android/chs/1108/TD550_MP/packages/apps/Camera/src/com/android/camera'
+let g:netrw_dirhist_5='/home/chrison/android/chs/1108/TD550_MP'

@@ -204,11 +204,48 @@ let g:agprg='ag -S --nocolor --nogroup --column --ignore sitedata --ignore image
 nmap <silent> <F3> :NERDTreeToggle<CR>"
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 autocmd vimenter * NERDTree
+" 【插件】rainbow_parentese
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+"au VimEnter * RainbowParenthesesToggle
+""au Syntax * RainbowParenthesesLoadRound
+""au Syntax * RainbowParenthesesLoadSquare
+""au Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_max = 16
+let g:rbpt_locadcmd_toggle = 0
+" python-hightlghting
+let python_highlight_all = 1
+let g:pyflakes_use_quickfix = 0
+" 防止tmux下vim的背景色显示异常
+" Refer: http://sunaku.github.io/vim-256color-bce.html
+if &term =~ '256color'
+"   " disable Background Color Erase (BCE) so that color schemes
+"     " render properly when inside 256-color tmux and GNU screen.
+"       " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+         set t_ut=
+     endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""实用设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 设置当文件被改动时自动载入
+set list listchars=tab:→\ ,trail:·
 set autoread
 " quickfix模式
 autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
@@ -226,6 +263,7 @@ set nobackup
 set autowrite
 set ruler                   " 打开状态栏标尺
 set cursorline              " 突出显示当前行
+set cursorcolumn			" 突出显示当前列
 set magic                   " 设置魔术
 set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
